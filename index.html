@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Блокнот</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Блокнот" />
+	<meta name="keywords" content="Блокнот" />
+	<link rel="icon" href="data:image/png;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABZhFHWWYRR1lmEUdZZhFHWWYRR1lmEUdZZhFHWWYRR1lmEUdZZhFHWWYRR1lmEUdZZhFHWWYRR1lmEUdZZhFHWc6do1nOnaNZzp2jWc6do1nOnaNZzp2jWc6do1nOnaNZzp2jWc6do1nOnaNZzp2jWc6do1nOnaNZzp2jWWYRR1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWc6do1lmEUdZ+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1nOnaNZZhFHWfsmH1n7Jh9YgSRjWIEkY1n7Jh9YgSRjWIEkY1iBJGNYgSRjWIEkY1iBJGNYgSRjWfsmH1n7Jh9Zzp2jWWYRR1n7Jh9Z+yYfWIEkY1iBJGNZ+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWc6do1lmEUdZ+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1nOnaNZZhFHWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Zzp2jWWYRR1n7Jh9Z+yYfWIEkY1iBJGNZ+yYfWIEkY1iBJGNYgSRjWIEkY1iBJGNYgSRjWIEkY1n7Jh9Z+yYfWc6do1lmEUdZ+yYfWfsmH1iBJGNYgSRjWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1nOnaNZZhFHWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Zzp2jWWYRR1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWc6do1lmEUdZ+yYfWfsmH1iBJGNYgSRjWfsmH1iBJGNYgSRjWIEkY1iBJGNYgSRjWIEkY1iBJGNZ+yYfWfsmH1nOnaNZZhFHWfsmH1n7Jh9YgSRjWIEkY1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Zzp2jWWYRR1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWc6do1lmEUdZ+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1n7Jh9Z+yYfWfsmH1nOnaNZZhFHWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==">
+	<style type="text/css">
+		@font-face {
+			font-family: Skellyman;
+			src: url(Skellyman.ttf);
+	    }
+		body {
+			display: flex;
+			justify-content: center; 
+			background-color: #BFF7FF;
+		}
+		.back {
+			width: 800px;
+		}
+		.add {
+			margin-left: 40px;
+			width: 40px;
+			height: 35px;
+			background-color: #009E8E;
+			border-radius: 5px;
+		}
+		.note {
+			padding:0;
+			list-style: none;
+			counter-reset: li;
+		}    
+		.note li {
+			font-family: Skellyman;
+			font-weight: 700;
+			position: relative;
+			border-left: 4px solid #009E8E;
+			padding:16px 20px 16px 28px;
+			margin:12px 0 12px 80px;
+			-webkit-transition-duration: 0.3s;
+			transition-duration: 0.3s;
+		}
+		.note li:before {
+			line-height: 32px;
+			position: absolute;
+			top: 10px;
+			left:-80px;
+			width:80px;
+			text-align:center;
+			font-size: 24px;
+			font-weight: bold;
+			color: #00675C;
+			counter-increment: li;
+			content: counter(li);
+			-webkit-transition-duration: 0.3s;
+			transition-duration: 0.3s;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;    
+		}
+		.note li:hover:before {
+			color: #1E776D;
+		}
+		.note li:after {
+			position: absolute;
+			top: 26px;
+			left: -40px;
+			width: 60px;
+			height: 60px;
+			border: 8px solid #FF6C00;
+			border-radius: 50%;
+			content: '';
+			opacity: 0;
+			-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+			-moz-transition: -moz-transform 0.3s, opacity 0.3s;
+			transition: transform 0.3s, opacity 0.3s;
+			-webkit-transform: translateX(-50%) translateY(-50%) scale(0.1);
+			-moz-transform: translateX(-50%) translateY(-50%) scale(0.1);
+			transform: translateX(-50%) translateY(-50%) scale(0.1);
+			pointer-events: none;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;        
+		}
+		.note li:hover:after {
+			opacity: 0.2;
+			-webkit-transform: translateX(-50%) translateY(-50%) scale(1);
+			-moz-transform: translateX(-50%) translateY(-50%) scale(1);
+			transform: translateX(-50%) translateY(-50%) scale(1);
+		}    
+    </style>
+</head>
+<body>
+	<div class="back">
+		<input class="add" type="button" value="+" onclick="addItem();"/>
+		<ul id="note" class="note"></ul>
+	</div>
+</body>
+	<script>
+		if(localStorage.storedList) {
+			loadList();
+		}
+		function addItem() {
+			var text = prompt("Введите заметку");
+			if (text != null && text != "") {
+				var newItem = document.createElement("li");
+				newItem.innerHTML = text;
+				newItem.onclick = removeItem;
+				document.getElementById("note").appendChild(newItem);
+				saveList();
+			}
+		}
+		function removeItem() {
+			if (confirm("Удалить заметку?")) {
+				document.getElementById("note").removeChild(this);
+				saveList();
+			}
+		}
+		function saveList() {
+			localStorage.storedList = document.getElementById("note").innerHTML;
+		}
+		function loadList() {
+			document.getElementById("note").innerHTML = localStorage.storedList;
+			for(var i = 0; i < note.children.length; i++) {
+				note.children[i].onclick = removeItem;
+			}
+		}
+	</script>
+</html>
